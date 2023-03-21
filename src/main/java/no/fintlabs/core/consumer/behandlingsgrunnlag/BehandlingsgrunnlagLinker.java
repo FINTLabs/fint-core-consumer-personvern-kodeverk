@@ -4,6 +4,7 @@ import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResource;
 import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResources;
 import no.fint.relations.FintLinker;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.stream.IntStream;
@@ -11,6 +12,7 @@ import java.util.stream.Stream;
 
 import static java.util.Objects.isNull;
 
+@Component
 public class BehandlingsgrunnlagLinker extends FintLinker<BehandlingsgrunnlagResource> {
 
     public BehandlingsgrunnlagLinker() {

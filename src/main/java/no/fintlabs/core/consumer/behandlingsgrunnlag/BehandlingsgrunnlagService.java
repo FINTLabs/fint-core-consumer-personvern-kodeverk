@@ -1,5 +1,6 @@
 package no.fintlabs.core.consumer.behandlingsgrunnlag;
 
+import lombok.extern.slf4j.Slf4j;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResource;
 import no.fintlabs.cache.Cache;
@@ -8,10 +9,12 @@ import no.fintlabs.cache.packing.PackingTypes;
 import no.fintlabs.core.consumer.shared.resource.CacheService;
 import no.fintlabs.core.consumer.shared.resource.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.Optional;
 
+@Service
 public class BehandlingsgrunnlagService extends CacheService<BehandlingsgrunnlagResource> {
 
     private final BehandlingsgrunnlagKafkaConsumer fravarKafkaConsumer;
