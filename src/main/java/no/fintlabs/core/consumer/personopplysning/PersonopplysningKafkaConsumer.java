@@ -1,4 +1,4 @@
-package no.fintlabs.consumer.personopplysning;
+package no.fintlabs.core.consumer.personopplysning;
 
 import no.fint.model.resource.personvern.kodeverk.PersonopplysningResource;
 import no.fintlabs.core.consumer.shared.resource.kafka.EntityKafkaConsumer;

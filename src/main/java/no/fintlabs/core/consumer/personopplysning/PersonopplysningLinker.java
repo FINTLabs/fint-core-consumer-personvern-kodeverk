@@ -1,9 +1,10 @@
-package no.fintlabs.consumer.behandlingsgrunnlag;
+package no.fintlabs.core.consumer.personopplysning;
 
-import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResource;
-import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResources;
+import no.fint.model.resource.personvern.kodeverk.PersonopplysningResource;
+import no.fint.model.resource.personvern.kodeverk.PersonopplysningResources;
 import no.fint.relations.FintLinker;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.stream.IntStream;
@@ -11,36 +12,37 @@ import java.util.stream.Stream;
 
 import static java.util.Objects.isNull;
 
-public class BehandlingsgrunnlagLinker extends FintLinker<BehandlingsgrunnlagResource> {
+@Component
+public class PersonopplysningLinker extends FintLinker<PersonopplysningResource> {
 
-    public BehandlingsgrunnlagLinker() {
-        super(BehandlingsgrunnlagResource.class);
+    public PersonopplysningLinker() {
+        super(PersonopplysningResource.class);
     }
 
-    public void mapLinks(BehandlingsgrunnlagResource resource) {
+    public void mapLinks(PersonopplysningResource resource) {
         super.mapLinks(resource);
     }
 
     @Override
-    public BehandlingsgrunnlagResources toResources(Collection<BehandlingsgrunnlagResource> collection) {
+    public PersonopplysningResources toResources(Collection<PersonopplysningResource> collection) {
         return toResources(collection.stream(), 0, 0, collection.size());
     }
 
     @Override
-    public BehandlingsgrunnlagResources toResources(Stream<BehandlingsgrunnlagResource> stream, int offset, int size, int totalItems) {
-        BehandlingsgrunnlagResources resources = new BehandlingsgrunnlagResources();
+    public PersonopplysningResources toResources(Stream<PersonopplysningResource> stream, int offset, int size, int totalItems) {
+        PersonopplysningResources resources = new PersonopplysningResources();
         stream.map(this::toResource).forEach(resources::addResource);
         addPagination(resources, offset, size, totalItems);
         return resources;
     }
 
     @Override
-    public String getSelfHref(BehandlingsgrunnlagResource fravar) {
+    public String getSelfHref(PersonopplysningResource fravar) {
         return getAllSelfHrefs(fravar).findFirst().orElse(null);
     }
 
     @Override
-    public Stream<String> getAllSelfHrefs(BehandlingsgrunnlagResource fravar) {
+    public Stream<String> getAllSelfHrefs(PersonopplysningResource fravar) {
         Stream.Builder<String> builder = Stream.builder();
         if (!isNull(fravar.getSystemId()) && !StringUtils.isEmpty(fravar.getSystemId().getIdentifikatorverdi())) {
             builder.add(createHrefWithId(fravar.getSystemId().getIdentifikatorverdi(), "systemid"));
@@ -49,7 +51,7 @@ public class BehandlingsgrunnlagLinker extends FintLinker<BehandlingsgrunnlagRes
         return builder.build();
     }
 
-    int[] hashCodes(BehandlingsgrunnlagResource fravar) {
+    int[] hashCodes(PersonopplysningResource fravar) {
         IntStream.Builder builder = IntStream.builder();
         if (!isNull(fravar.getSystemId()) && !StringUtils.isEmpty(fravar.getSystemId().getIdentifikatorverdi())) {
             builder.add(fravar.getSystemId().getIdentifikatorverdi().hashCode());

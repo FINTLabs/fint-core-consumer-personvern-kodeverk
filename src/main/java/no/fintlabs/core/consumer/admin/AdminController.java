@@ -1,7 +1,7 @@
-package no.fintlabs.consumer.admin;
+package no.fintlabs.core.consumer.admin;
 
 import no.fintlabs.cache.CacheManager;
-import no.fintlabs.consumer.config.RestEndpoints;
+import no.fintlabs.core.consumer.config.RestEndpoints;
 import no.fintlabs.core.consumer.shared.ConsumerProps;
 import no.fintlabs.core.consumer.shared.admin.ConsumerAdminController;
 import no.fintlabs.core.consumer.shared.resource.CacheService;

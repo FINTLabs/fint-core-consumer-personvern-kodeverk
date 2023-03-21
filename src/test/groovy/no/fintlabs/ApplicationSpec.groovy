@@ -1,6 +1,6 @@
 package no.fintlabs
 
-import no.fintlabs.consumer.Application
+import no.fintlabs.core.consumer.Application
 import spock.lang.Specification
 
 class ApplicationSpec extends Specification {

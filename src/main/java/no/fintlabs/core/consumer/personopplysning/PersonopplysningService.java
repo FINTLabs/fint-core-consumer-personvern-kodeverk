@@ -1,4 +1,4 @@
-package no.fintlabs.consumer.personopplysning;
+package no.fintlabs.core.consumer.personopplysning;
 
 import lombok.extern.slf4j.Slf4j;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;

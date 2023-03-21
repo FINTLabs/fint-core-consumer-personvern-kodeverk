@@ -1,4 +1,4 @@
-package no.fintlabs.consumer;
+package no.fintlabs.core.consumer;
 
 import no.fintlabs.core.consumer.shared.ConsumerProps;
 import no.vigoiks.resourceserver.security.FintJwtCoreConverter;

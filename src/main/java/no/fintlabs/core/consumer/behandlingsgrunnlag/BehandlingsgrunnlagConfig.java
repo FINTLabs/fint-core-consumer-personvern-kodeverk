@@ -1,4 +1,4 @@
-package no.fintlabs.consumer.behandlingsgrunnlag;
+package no.fintlabs.core.consumer.behandlingsgrunnlag;
 
 import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResource;
 import no.fintlabs.core.consumer.shared.ConsumerProps;
