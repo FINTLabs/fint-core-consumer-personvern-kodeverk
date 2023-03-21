@@ -1,4 +1,4 @@
-package no.fintlabs.core.consumer;
+package no.fintlabs;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.server.ServerWebExchange;

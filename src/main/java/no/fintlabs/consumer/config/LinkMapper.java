@@ -1,4 +1,4 @@
-package no.fintlabs.core.consumer.config;
+package no.fintlabs.consumer.config;
 
 import com.google.common.collect.ImmutableMap;
 import no.fint.model.personvern.kodeverk.Behandlingsgrunnlag;

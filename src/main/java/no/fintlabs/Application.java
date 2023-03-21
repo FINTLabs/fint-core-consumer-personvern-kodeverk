@@ -1,4 +1,4 @@
-package no.fintlabs.core.consumer;
+package no.fintlabs;
 
 import no.fint.antlr.EnableFintFilter;
 import no.fint.relations.annotations.EnableFintRelations;

@@ -1,4 +1,4 @@
-package no.fintlabs.core.consumer.config;
+package no.fintlabs.consumer.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;

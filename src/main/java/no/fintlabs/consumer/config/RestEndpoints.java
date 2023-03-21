@@ -1,4 +1,4 @@
-package no.fintlabs.core.consumer.config;
+package no.fintlabs.consumer.config;
 
 public enum RestEndpoints {
     ;

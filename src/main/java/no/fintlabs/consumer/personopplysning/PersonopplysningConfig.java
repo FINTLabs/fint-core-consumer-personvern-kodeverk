@@ -1,4 +1,4 @@
-package no.fintlabs.core.consumer.personopplysning;
+package no.fintlabs.consumer.personopplysning;
 
 import no.fint.model.resource.personvern.kodeverk.PersonopplysningResource;
 import no.fintlabs.core.consumer.shared.ConsumerProps;

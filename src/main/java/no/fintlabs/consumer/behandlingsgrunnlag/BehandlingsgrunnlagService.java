@@ -1,6 +1,5 @@
-package no.fintlabs.core.consumer.behandlingsgrunnlag;
+package no.fintlabs.consumer.behandlingsgrunnlag;
 
-import lombok.extern.slf4j.Slf4j;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResource;
 import no.fintlabs.cache.Cache;
