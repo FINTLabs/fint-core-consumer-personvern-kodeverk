@@ -1,4 +1,4 @@
-package no.fintlabs.consumer.personopplysning;
+package no.fintlabs.consumer.model.personopplysning;
 
 import lombok.extern.slf4j.Slf4j;
 import no.fint.antlr.FintFilterService;

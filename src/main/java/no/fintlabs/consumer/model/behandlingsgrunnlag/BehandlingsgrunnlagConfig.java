@@ -1,4 +1,4 @@
-package no.fintlabs.consumer.behandlingsgrunnlag;
+package no.fintlabs.consumer.model.behandlingsgrunnlag;
 
 import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResource;
 import no.fintlabs.core.consumer.shared.ConsumerProps;
@@ -10,16 +10,6 @@ public class BehandlingsgrunnlagConfig extends ConsumerConfig<Behandlingsgrunnla
 
     public BehandlingsgrunnlagConfig(ConsumerProps consumerProps) {
         super(consumerProps);
-    }
-
-    @Override
-    protected String domainName() {
-        return "personvern";
-    }
-
-    @Override
-    protected String packageName() {
-        return "kodeverk";
     }
 
     @Override

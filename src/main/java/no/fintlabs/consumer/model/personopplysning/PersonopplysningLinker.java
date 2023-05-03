@@ -1,4 +1,4 @@
-package no.fintlabs.consumer.personopplysning;
+package no.fintlabs.consumer.model.personopplysning;
 
 import no.fint.model.resource.personvern.kodeverk.PersonopplysningResource;
 import no.fint.model.resource.personvern.kodeverk.PersonopplysningResources;
@@ -37,24 +37,24 @@ public class PersonopplysningLinker extends FintLinker<PersonopplysningResource>
     }
 
     @Override
-    public String getSelfHref(PersonopplysningResource fravar) {
-        return getAllSelfHrefs(fravar).findFirst().orElse(null);
+    public String getSelfHref(PersonopplysningResource resource) {
+        return getAllSelfHrefs(resource).findFirst().orElse(null);
     }
 
     @Override
-    public Stream<String> getAllSelfHrefs(PersonopplysningResource fravar) {
+    public Stream<String> getAllSelfHrefs(PersonopplysningResource resource) {
         Stream.Builder<String> builder = Stream.builder();
-        if (!isNull(fravar.getSystemId()) && !StringUtils.isEmpty(fravar.getSystemId().getIdentifikatorverdi())) {
-            builder.add(createHrefWithId(fravar.getSystemId().getIdentifikatorverdi(), "systemid"));
+        if (!isNull(resource.getSystemId()) && !StringUtils.isEmpty(resource.getSystemId().getIdentifikatorverdi())) {
+            builder.add(createHrefWithId(resource.getSystemId().getIdentifikatorverdi(), "systemid"));
         }
 
         return builder.build();
     }
 
-    int[] hashCodes(PersonopplysningResource fravar) {
+    int[] hashCodes(PersonopplysningResource resource) {
         IntStream.Builder builder = IntStream.builder();
-        if (!isNull(fravar.getSystemId()) && !StringUtils.isEmpty(fravar.getSystemId().getIdentifikatorverdi())) {
-            builder.add(fravar.getSystemId().getIdentifikatorverdi().hashCode());
+        if (!isNull(resource.getSystemId()) && !StringUtils.isEmpty(resource.getSystemId().getIdentifikatorverdi())) {
+            builder.add(resource.getSystemId().getIdentifikatorverdi().hashCode());
         }
 
         return builder.build().toArray();

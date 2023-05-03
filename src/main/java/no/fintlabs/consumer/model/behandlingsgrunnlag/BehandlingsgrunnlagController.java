@@ -1,4 +1,4 @@
-package no.fintlabs.consumer.behandlingsgrunnlag;
+package no.fintlabs.consumer.model.behandlingsgrunnlag;
 
 import lombok.extern.slf4j.Slf4j;
 import no.fint.antlr.FintFilterService;

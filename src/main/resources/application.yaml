@@ -13,6 +13,8 @@ spring:
 fint:
   consumer:
     org-id:
+    domain: personvern
+    package: kodeverk
   kafka:
     application-id: consumer-personvern-kodeverk
     enable-ssl: true

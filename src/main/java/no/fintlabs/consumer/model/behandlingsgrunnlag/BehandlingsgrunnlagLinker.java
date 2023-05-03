@@ -1,4 +1,4 @@
-package no.fintlabs.consumer.behandlingsgrunnlag;
+package no.fintlabs.consumer.model.behandlingsgrunnlag;
 
 import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResource;
 import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResources;
@@ -37,24 +37,24 @@ public class BehandlingsgrunnlagLinker extends FintLinker<BehandlingsgrunnlagRes
     }
 
     @Override
-    public String getSelfHref(BehandlingsgrunnlagResource fravar) {
-        return getAllSelfHrefs(fravar).findFirst().orElse(null);
+    public String getSelfHref(BehandlingsgrunnlagResource resource) {
+        return getAllSelfHrefs(resource).findFirst().orElse(null);
     }
 
     @Override
-    public Stream<String> getAllSelfHrefs(BehandlingsgrunnlagResource fravar) {
+    public Stream<String> getAllSelfHrefs(BehandlingsgrunnlagResource resource) {
         Stream.Builder<String> builder = Stream.builder();
-        if (!isNull(fravar.getSystemId()) && !StringUtils.isEmpty(fravar.getSystemId().getIdentifikatorverdi())) {
-            builder.add(createHrefWithId(fravar.getSystemId().getIdentifikatorverdi(), "systemid"));
+        if (!isNull(resource.getSystemId()) && !StringUtils.isEmpty(resource.getSystemId().getIdentifikatorverdi())) {
+            builder.add(createHrefWithId(resource.getSystemId().getIdentifikatorverdi(), "systemid"));
         }
 
         return builder.build();
     }
 
-    int[] hashCodes(BehandlingsgrunnlagResource fravar) {
+    int[] hashCodes(BehandlingsgrunnlagResource resource) {
         IntStream.Builder builder = IntStream.builder();
-        if (!isNull(fravar.getSystemId()) && !StringUtils.isEmpty(fravar.getSystemId().getIdentifikatorverdi())) {
-            builder.add(fravar.getSystemId().getIdentifikatorverdi().hashCode());
+        if (!isNull(resource.getSystemId()) && !StringUtils.isEmpty(resource.getSystemId().getIdentifikatorverdi())) {
+            builder.add(resource.getSystemId().getIdentifikatorverdi().hashCode());
         }
 
         return builder.build().toArray();

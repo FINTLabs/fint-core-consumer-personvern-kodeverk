@@ -1,4 +1,4 @@
-package no.fintlabs.consumer.personopplysning;
+package no.fintlabs.consumer.model.personopplysning;
 
 import no.fint.model.resource.personvern.kodeverk.PersonopplysningResource;
 import no.fintlabs.core.consumer.shared.ConsumerProps;
@@ -10,16 +10,6 @@ public class PersonopplysningConfig extends ConsumerConfig<PersonopplysningResou
 
     public PersonopplysningConfig(ConsumerProps consumerProps) {
         super(consumerProps);
-    }
-
-    @Override
-    protected String domainName() {
-        return "utdanning";
-    }
-
-    @Override
-    protected String packageName() {
-        return "vurdering";
     }
 
     @Override
