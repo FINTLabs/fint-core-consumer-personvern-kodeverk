@@ -14,6 +14,6 @@ public class PersonopplysningConfig extends ConsumerConfig<PersonopplysningResou
 
     @Override
     protected String resourceName() {
-        return "fravar";
+        return "personopplysning";
     }
 }
