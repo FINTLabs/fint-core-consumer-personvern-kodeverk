@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   security:
@@ -8,7 +8,7 @@ spring:
         jwt:
           issuer-uri: https://idp.felleskomponent.no/nidp/oauth/nam
   webflux:
-    base-path: /personvern/samtykke
+    base-path: /personvern/kodeverk
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
@@ -22,9 +22,9 @@ fint:
   consumer:
     org-id: fintlabs.no
     domain: personvern
-    package: samtykke
+    package: kodeverk
   kafka:
-    application-id: consumer-personvern-samtykke
+    application-id: consumer-personvern-kodeverk
     enable-ssl: false
     default-replicas: 1
     topic:
