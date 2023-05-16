@@ -11,6 +11,8 @@ spring:
       group-id: consumer-personvern-kodeverk # consumer-utdanning-vurdering-<your-instance-id>
 
 fint:
+  security:
+    org-id: false
   consumer:
     org-id:
     domain: personvern
