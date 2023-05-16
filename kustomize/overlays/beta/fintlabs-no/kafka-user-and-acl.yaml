@@ -5,4 +5,4 @@ metadata:
 spec:
   acls:
     - permission: admin
-      topic: "fintlabs-no.fint-core.*"
+      topic: "*.fint-core.*"
