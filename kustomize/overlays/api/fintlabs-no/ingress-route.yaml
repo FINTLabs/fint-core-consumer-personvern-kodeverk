@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: "Host(`api.felleskomponent.no`) && (PathPrefix( `/personvern/kodeverk`))"
+    - match: "Host(`api.felleskomponent.no`) && (PathPrefix( `/personvern/kodeverk`)) && Headers(`x-org-id`, `fintlabs.no`)"
       kind: Rule
       services:
         - name: fint-core-consumer-personvern-kodeverk
