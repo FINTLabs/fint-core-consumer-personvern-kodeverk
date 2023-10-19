@@ -1,5 +1,6 @@
 package no.fintlabs.consumer.model.behandlingsgrunnlag;
 
+import jakarta.annotation.PostConstruct;
 import no.fint.model.felles.kompleksedatatyper.Identifikator;
 import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResource;
 import no.fintlabs.cache.Cache;
@@ -10,7 +11,6 @@ import no.fintlabs.core.consumer.shared.resource.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.util.Optional;
 
 @Service
