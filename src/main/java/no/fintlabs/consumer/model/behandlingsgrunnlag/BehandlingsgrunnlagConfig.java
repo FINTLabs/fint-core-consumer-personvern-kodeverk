@@ -1,7 +1,7 @@
 package no.fintlabs.consumer.model.behandlingsgrunnlag;
 
 import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResource;
-import no.fintlabs.core.consumer.shared.ConsumerProps;
+import no.fintlabs.core.consumer.shared.config.ConsumerProps;
 import no.fintlabs.core.consumer.shared.resource.ConsumerConfig;
 import org.springframework.stereotype.Component;
 
