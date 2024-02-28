@@ -1,5 +1,6 @@
 package no.fintlabs.consumer.model.personopplysning;
 
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import no.fint.antlr.FintFilterService;
 import no.fint.model.resource.personvern.kodeverk.PersonopplysningResource;
@@ -20,5 +21,11 @@ public class PersonopplysningController extends ConsumerRestController<Personopp
     public PersonopplysningController(PersonopplysningService personopplysningService, PersonopplysningLinker linker, FintFilterService oDataFilterService) {
         super(personopplysningService, linker, oDataFilterService);
     }
+
+    @PostConstruct
+    private void registerIdentificators() {
+        super.registerIdenficatorHandler("systemid", PersonopplysningResource::getSystemId);
+    }
+
 }
 

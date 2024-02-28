@@ -1,5 +1,6 @@
 package no.fintlabs.consumer.model.behandlingsgrunnlag;
 
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import no.fint.antlr.FintFilterService;
 import no.fint.model.resource.personvern.kodeverk.BehandlingsgrunnlagResource;
@@ -23,5 +24,11 @@ public class BehandlingsgrunnlagController extends ConsumerRestController<Behand
             FintFilterService oDataFilterService) {
         super(service, linker, oDataFilterService);
     }
+
+    @PostConstruct
+    private void registerIdentificators() {
+        super.registerIdenficatorHandler("systemid", BehandlingsgrunnlagResource::getSystemId);
+    }
+
 }
 
