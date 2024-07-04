@@ -28,7 +28,7 @@ fint:
 
 logging:
   level:
-    root: INFO
+    root: debug
     org.apache.kafka: WARN
     org:
       springframework:
