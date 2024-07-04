@@ -35,11 +35,4 @@ public class PersonopplysningController extends WriteableConsumerRestController<
     private void registerIdentificators() {
         super.registerIdenficatorHandler("systemid", PersonopplysningResource::getSystemId);
     }
-
-    @PostConstruct
-    private void registerIdentificators() {
-        super.registerIdenficatorHandler("systemid", PersonopplysningResource::getSystemId);
-    }
-
 }
-
