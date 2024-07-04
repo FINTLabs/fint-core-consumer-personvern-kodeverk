@@ -6,7 +6,9 @@ import no.fint.antlr.FintFilterService;
 import no.fint.model.resource.personvern.kodeverk.PersonopplysningResource;
 import no.fint.relations.FintRelationsMediaType;
 import no.fintlabs.consumer.config.RestEndpoints;
+import no.fintlabs.core.consumer.shared.resource.CacheService;
 import no.fintlabs.core.consumer.shared.resource.ConsumerRestController;
+import no.fintlabs.core.consumer.shared.resource.WriteableConsumerRestController;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,10 +18,22 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RestController
 @RequestMapping(name = "Personopplysning", value = RestEndpoints.PERSONOPPLYSNING, produces = {FintRelationsMediaType.APPLICATION_HAL_JSON_VALUE, MediaType.APPLICATION_JSON_VALUE})
-public class PersonopplysningController extends ConsumerRestController<PersonopplysningResource> {
+public class PersonopplysningController extends WriteableConsumerRestController<PersonopplysningResource> {
 
-    public PersonopplysningController(PersonopplysningService personopplysningService, PersonopplysningLinker linker, FintFilterService oDataFilterService) {
-        super(personopplysningService, linker, oDataFilterService);
+    public PersonopplysningController(
+            CacheService<PersonopplysningResource> cacheService,
+            PersonopplysningLinker fintLinker,
+            PersonopplysningConfig personopplysningConfig,
+            PersonopplysningEventKafkaProducer personopplysningEventKafkaProducer,
+            PersonopplysningResponseKafkaConsumer personopplysningResponseKafkaConsumer,
+            FintFilterService odataFilterService,
+            PersonopplysningRequestKafkaConsumer personopplysningRequestKafkaConsumer) {
+        super(cacheService, fintLinker, personopplysningConfig, personopplysningEventKafkaProducer, personopplysningResponseKafkaConsumer, odataFilterService, personopplysningRequestKafkaConsumer);
+    }
+
+    @PostConstruct
+    private void registerIdentificators() {
+        super.registerIdenficatorHandler("systemid", PersonopplysningResource::getSystemId);
     }
 
     @PostConstruct
