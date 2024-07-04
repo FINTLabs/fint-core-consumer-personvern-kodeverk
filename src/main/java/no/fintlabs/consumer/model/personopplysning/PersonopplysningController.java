@@ -7,7 +7,6 @@ import no.fint.model.resource.personvern.kodeverk.PersonopplysningResource;
 import no.fint.relations.FintRelationsMediaType;
 import no.fintlabs.consumer.config.RestEndpoints;
 import no.fintlabs.core.consumer.shared.resource.CacheService;
-import no.fintlabs.core.consumer.shared.resource.ConsumerRestController;
 import no.fintlabs.core.consumer.shared.resource.WriteableConsumerRestController;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
