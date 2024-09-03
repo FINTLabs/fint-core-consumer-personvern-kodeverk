@@ -39,11 +39,11 @@ public class PersonopplysningService extends CacheService<PersonopplysningResour
 
     @PostConstruct
     private void registerKafkaListener() {
-        long retention = personopplysningKafkaConsumer.registerListener(PersonopplysningResource.class, this::addResourceToCache);
-        getCache().setRetentionPeriodInMs(retention);
+        personopplysningKafkaConsumer.registerListener(PersonopplysningResource.class, this::addResourceToCache);
     }
 
     private void addResourceToCache(ConsumerRecord<String, PersonopplysningResource> consumerRecord) {
+        updateRetensionTime(consumerRecord.headers().lastHeader("topic-retension-time"));
         this.eventLogger.logDataRecieved();
         PersonopplysningResource fravarResource = consumerRecord.value();
         linker.mapLinks(fravarResource);

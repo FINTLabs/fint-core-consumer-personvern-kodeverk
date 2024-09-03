@@ -37,11 +37,11 @@ public class BehandlingsgrunnlagService extends CacheService<Behandlingsgrunnlag
 
     @PostConstruct
     private void registerKafkaListener() {
-        long retention = fravarKafkaConsumer.registerListener(BehandlingsgrunnlagResource.class, this::addResourceToCache);
-        getCache().setRetentionPeriodInMs(retention);
+        fravarKafkaConsumer.registerListener(BehandlingsgrunnlagResource.class, this::addResourceToCache);
     }
 
     private void addResourceToCache(ConsumerRecord<String, BehandlingsgrunnlagResource> consumerRecord) {
+        updateRetensionTime(consumerRecord.headers().lastHeader("topic-retension-time"));
         this.eventLogger.logDataRecieved();
         BehandlingsgrunnlagResource resource = consumerRecord.value();
         linker.mapLinks(resource);
